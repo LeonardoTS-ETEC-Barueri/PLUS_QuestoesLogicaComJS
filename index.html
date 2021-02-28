@@ -151,6 +151,7 @@
             let divCode = document.querySelector('div#divCode')
             let codeContainer = document.querySelector('div#codeContainer');
             let codeTag = document.querySelector('code#codeGoesHere')
+            let fullRepoUrlToScripts = `${window.location.protocol}//${window.location.host}/PLUS_QuestoesLogicaComJS/public/scripts`;
 
             // Show Intro.
             document.querySelector(`a#list-introducao-list`).addEventListener('click', async () => {
@@ -162,7 +163,7 @@
             // Show Source-codes.
             document.querySelector(`a#list-exViagem-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/01_viagem.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/01_viagem.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -177,7 +178,7 @@
 
             document.querySelector(`a#list-exDistributiva-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/02_distributiva.js`)
+                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/PLUS_QuestoesLogicaComJS/public/scripts/02_distributiva.js`)
                 .then((res) => { 
                     return res.text()
                 })
