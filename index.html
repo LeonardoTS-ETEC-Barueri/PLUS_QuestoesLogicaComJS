@@ -5,11 +5,11 @@
         <meta name='viewport' content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self'; style-src 'self'; object-src 'self'">
-        <meta http-equiv="Default-Src" content="*">
-        <meta http-equiv="Script-Src" content="self ">
-        <meta http-equiv="Default-Src" content="*">
-
+        <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline';
+        script-src http://* https://* 'unsafe-inline';
+        script-src-elem 'self' http://* https://* 'unsafe-inline';
+        img-src 'self' data: content:;">
 
         <title>Exercícios de Lógica</title>
 
