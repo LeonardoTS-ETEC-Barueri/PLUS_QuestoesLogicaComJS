@@ -4,6 +4,13 @@
         <meta charset="UTF-8">
         <meta name='viewport' content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline';
+        script-src http://* https://* 'unsafe-inline';
+        script-src-elem 'self' http://* https://* 'unsafe-inline';
+        img-src 'self' data: content:;">
+
         <title>Exercícios de Lógica</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -13,13 +20,13 @@
     </head>
     <body>
         <div class="container-fluid d-flex flex-column vh-100 font-monospace">
-            <div class="row flex-fill"> <!-- Row Lv.1 -->
-                <div class="col-2"> <!-- Col: Side-menu Begin -->
+            <div class="row overflow-auto flex-fill"> <!-- Row Lv.1 -->
+                <div class="col-sm-12 col-md-4 col-lg-2 overflow-auto h-100"> <!-- Col: Side-menu Begin -->
 
                     <div class="row">   <!-- Row Lv.2a -->
                         <div class="col-12 p-0 text-center">    <!-- Col Lv.2aa -->
                             <hr>
-                                <button class="btn w-75 btn-secondary btn-sm" type="button" onclick='location.reload()'>Home</button>
+                                <button class="btn w-75 btn-secondary btn-sm" type="button" onclick="window.location='index.html'">Home</button>
                             <hr>
                         </div>
                         <div class="col-12 p-0">    <!-- Col Lv.2ab -->
@@ -33,23 +40,23 @@
                                     </button>
                                   </h2>
                                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body overflow-auto" style="max-height: 250px;">
+                                    <div class="accordion-body">
         
                                         <div class="list-group small" id="list-tab" role="tablist">   <!-- Bootstrap's JavaScript List-Group Tablist, interacts with Content. -->
-                                            <a class="list-group-item list-group-item-action text-truncate active" id="list-introducao-list" data-bs-toggle="list" href="#list-introducao" role="tab" aria-controls="introducao" title="Introdução">Introdução</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exViagem-list" data-bs-toggle="list" href="#list-viagem" role="tab" aria-controls="viagem" title="01. Viagem">01. Viagem</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exDistributiva-list" data-bs-toggle="list" href="#list-distributiva" role="tab" aria-controls="distributiva" title="02. Distributiva">02. Distributiva</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exSomaProduto-list" data-bs-toggle="list" href="#list-somaProduto" role="tab" aria-controls="somaProduto" title="03. Soma produto">03. Soma produto</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exNumOrdenado-list" data-bs-toggle="list" href="#list-numOrdenado" role="tab" aria-controls="numOrdenado" title="04. Números ordenados">04. Números ordenados</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exDivisiveis-list" data-bs-toggle="list" href="#list-divisiveis" role="tab" aria-controls="divisiveis" title="05. São divisíveis?">05. São divisíveis?</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exMaiorMenor-list" data-bs-toggle="list" href="#list-maiorMenor" role="tab" aria-controls="maiorMenor" title="06. Maior/Menor">06. Maior/Menor</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exTipoTriangulo-list" data-bs-toggle="list" href="#list-tipoTriangulo" role="tab" aria-controls="tipoTriangulo" title="07. Tipo triângulo">07. Tipo triângulo</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exFatorial-list" data-bs-toggle="list" href="#list-fatorial" role="tab" aria-controls="fatorial" title="08. Fatorial">08. Fatorial</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exCalculadora-list" data-bs-toggle="list" href="#list-calculadora" role="tab" aria-controls="calculadora" title="09. Calculadora básica">09. Calculadora básica</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exListaNomes-list" data-bs-toggle="list" href="#list-listaNomes" role="tab" aria-controls="listaNomes" title="10. Lista nomes">10. Lista nomes</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exMultArr-list" data-bs-toggle="list" href="#list-multArr" role="tab" aria-controls="multArr" title="11. Multiplicação de Matriz">11. Multiplicação de Matriz</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exSomaImpar-list" data-bs-toggle="list" href="#list-somaImpar" role="tab" aria-controls="somaImpar" title="12. Soma Impar">12. Soma Impar</a>
-                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exParImpar-list" data-bs-toggle="list" href="#list-parImpar" role="tab" aria-controls="parImpar" title="13. Par ou Impar?">13. Par ou Impar?</a>
+                                            <a class="list-group-item list-group-item-action text-truncate active" id="list-introducao-list" data-bs-toggle="list" href="#list-introducao" onclick="window.location='#tabContent'" role="tab" aria-controls="introducao" title="Introdução">Introdução</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exViagem-list" data-bs-toggle="list" href="#list-viagem" onclick="window.location='#tabContent'" role="tab" aria-controls="viagem" title="01. Viagem">01. Viagem</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exDistributiva-list" data-bs-toggle="list" href="#list-distributiva" onclick="window.location='#tabContent'" role="tab" aria-controls="distributiva" title="02. Distributiva">02. Distributiva</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exSomaProduto-list" data-bs-toggle="list" href="#list-somaProduto" onclick="window.location='#tabContent'" role="tab" aria-controls="somaProduto" title="03. Soma produto">03. Soma produto</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exNumOrdenado-list" data-bs-toggle="list" href="#list-numOrdenado" onclick="window.location='#tabContent'" role="tab" aria-controls="numOrdenado" title="04. Números ordenados">04. Números ordenados</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exDivisiveis-list" data-bs-toggle="list" href="#list-divisiveis" onclick="window.location='#tabContent'" role="tab" aria-controls="divisiveis" title="05. São divisíveis?">05. São divisíveis?</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exMaiorMenor-list" data-bs-toggle="list" href="#list-maiorMenor" onclick="window.location='#tabContent'" role="tab" aria-controls="maiorMenor" title="06. Maior/Menor">06. Maior/Menor</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exTipoTriangulo-list" data-bs-toggle="list" href="#list-tipoTriangulo" onclick="window.location='#tabContent'" role="tab" aria-controls="tipoTriangulo" title="07. Tipo triângulo">07. Tipo triângulo</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exFatorial-list" data-bs-toggle="list" href="#list-fatorial" onclick="window.location='#tabContent'" role="tab" aria-controls="fatorial" title="08. Fatorial">08. Fatorial</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exCalculadora-list" data-bs-toggle="list" href="#list-calculadora" onclick="window.location='#tabContent'" role="tab" aria-controls="calculadora" title="09. Calculadora básica">09. Calculadora básica</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exListaNomes-list" data-bs-toggle="list" href="#list-listaNomes" onclick="window.location='#tabContent'" role="tab" aria-controls="listaNomes" title="10. Lista nomes">10. Lista nomes</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exMultArr-list" data-bs-toggle="list" href="#list-multArr" onclick="window.location='#tabContent'" role="tab" aria-controls="multArr" title="11. Multiplicação de Matriz">11. Multiplicação de Matriz</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exSomaImpar-list" data-bs-toggle="list" href="#list-somaImpar" onclick="window.location='#tabContent'" role="tab" aria-controls="somaImpar" title="12. Soma Impar">12. Soma Impar</a>
+                                            <a class="list-group-item list-group-item-action text-truncate" id="list-exParImpar-list" data-bs-toggle="list" href="#list-parImpar" onclick="window.location='#tabContent'" role="tab" aria-controls="parImpar" title="13. Par ou Impar?">13. Par ou Impar?</a>
                                         </div>
                                         <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body. -->
                                         
@@ -64,56 +71,59 @@
 
                 </div>  <!-- Col: Side-Menu End -->
 
-                <main class="col-10 bg-success">    <!-- Col: Main-Content Begin -->
+                <main class="col-sm-12 col-md-8 col-lg-10 flex-fill h-100 bg-success">    <!-- Col: Main-Content Begin -->
                     <div class="row d-flex flex-column h-100 bg-info">  <!-- Row Lv.2b -->
 
                         <div class="col-12 flex-fill p-2 bg-danger">   <!-- Col Lv.2ba -->
 
                             <!-- Todo contéudo interativo vai aqui... -->
-                            <div class="tab-content h-100" id="nav-tabContent">   <!-- Bootstrap's JavaScript List-Group Content -->
+                            <div id="tabContent" class="tab-content h-100" id="nav-tabContent">   <!-- Bootstrap's JavaScript List-Group Content -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost show active" id="list-introducao" role="tabpanel" aria-labelledby="list-introducao-list">
-                                    Introdução
+                                    <p>Olá! Seja bem-vindo ao repositório de soluções para os desafios de lógica de programação da ETEC de Barueri.</p>
+                                    <p>Meu nome é Leonardo T.S. e estou no 3º módulo do curso.</p>
+                                    <p>Essa página ainda está em desenvolvimento, preciso adicionar interatividade às seções, para que você leitor possa visualizar o código em ação!</p>
+                                    <p>No momento, apenas o código fonte em uma versão não-interativa está disponível, ele apresenta a solução para o desafio, porém <strong>ainda</strong> não está integrado as funcionalidades dessa página :(</p>
                                 </div>
 
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-viagem" role="tabpanel" aria-labelledby="list-exViagem-list">
-                                    Função Viagem
+                                    Tela e lógica de interação com a Função Viagem (Todo...)
                                 </div>
 
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-distributiva" role="tabpanel" aria-labelledby="list-exDistributiva-list">
-                                    Função Distributiva
+                                    Tela e lógica de interação com a Função Distributiva (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-somaProduto" role="tabpanel" aria-labelledby="list-exSomaProduto-list">
-                                    Função Soma Produto
+                                    Tela e lógica de interação com a Função Soma Produto (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-numOrdenado" role="tabpanel" aria-labelledby="list-exNumOrdenado-list">
-                                    Função Num Ordenado
+                                    Tela e lógica de interação com a Função Num Ordenado (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-divisiveis" role="tabpanel" aria-labelledby="list-exDivisiveis-list">
-                                    Função Divisiveis
+                                    Tela e lógica de interação com a Função Divisiveis (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-maiorMenor" role="tabpanel" aria-labelledby="list-exMaiorMenor-list">
-                                    Função Maior Menor
+                                    Tela e lógica de interação com a Função Maior Menor (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-tipoTriangulo" role="tabpanel" aria-labelledby="list-exTipoTriangulo-list">
-                                    Função Tipo Triangulo
+                                    Tela e lógica de interação com a Função Tipo Triangulo (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-fatorial" role="tabpanel" aria-labelledby="list-exFatorial-list">
-                                    Função Fatorial
+                                    Tela e lógica de interação com a Função Fatorial (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-calculadora" role="tabpanel" aria-labelledby="list-exCalculadora-list">
-                                    Função Calculadora
+                                    Tela e lógica de interação com a Função Calculadora (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-listaNomes" role="tabpanel" aria-labelledby="list-exListaNomes-list">
-                                    Função ListaNomes
+                                    Tela e lógica de interação com a Função ListaNomes (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-multArr" role="tabpanel" aria-labelledby="list-exMultArr-list">
-                                    Função Multiplicação de Matrizes
+                                    Tela e lógica de interação com a Função Multiplicação de Matrizes (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-somaImpar" role="tabpanel" aria-labelledby="list-exSomaImpar-list">
-                                    Função Soma Impar
+                                    Tela e lógica de interação com a Função Soma Impar (Todo...)
                                 </div>
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-parImpar" role="tabpanel" aria-labelledby="list-exParImpar-list">
-                                    Função Par Impar
+                                    Tela e lógica de interação com a Função Par Impar (Todo...)
                                 </div>
                             </div>
                             <!-- Funcionalidades -->
@@ -122,14 +132,14 @@
                         <div id="divCode" class="col-12 d-none overflow-auto p-0 m-0 bg-light">    <!-- Col Lv.2bb -->
 
                             <div id="codeContainer" class="p-0 m-0 bg-light" style="opacity: 0;">   <!-- My Custom JavaScript -->
-                                <pre class="p-3 m-0" style="height: 15vw"><code id="codeGoesHere" class="language-javascript"></code></pre>
+                                <pre class="p-3 m-0" style="height: 25vh;"><code id="codeGoesHere" class="language-javascript"></code></pre>
                             </div>
                             <!-- Código-Fonte -->
 
                         </div>
                     </div>  <!-- Row Lv.2b End -->
                 </main> <!-- Col: Main-Content End -->
-
+                
             </div>
             <footer class="row">
                 <div class="col-12 bg-secondary">
@@ -144,6 +154,7 @@
             let divCode = document.querySelector('div#divCode')
             let codeContainer = document.querySelector('div#codeContainer');
             let codeTag = document.querySelector('code#codeGoesHere')
+            let fullRepoUrlToScripts = `${window.location.protocol}//${window.location.host}/PLUS_QuestoesLogicaComJS/public/scripts`;
 
             // Show Intro.
             document.querySelector(`a#list-introducao-list`).addEventListener('click', async () => {
@@ -155,7 +166,7 @@
             // Show Source-codes.
             document.querySelector(`a#list-exViagem-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/01_viagem.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/01_viagem.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -163,14 +174,14 @@
                     console.log(err);
                 });
 
-                codeTag.innerHTML = viagem;
+                codeTag.textContent = viagem;
                 Prism.highlightAll();
                 unfade(codeContainer);
             });
 
             document.querySelector(`a#list-exDistributiva-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/02_distributiva.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/02_distributiva.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -185,7 +196,7 @@
 
             document.querySelector(`a#list-exSomaProduto-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/03_somaproduto.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/03_somaproduto.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -200,7 +211,7 @@
 
             document.querySelector(`a#list-exNumOrdenado-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/04_numerosOrdenados.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/04_numerosOrdenados.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -215,7 +226,7 @@
 
             document.querySelector(`a#list-exDivisiveis-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/05_saoDivisiveis.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/05_saoDivisiveis.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -230,7 +241,7 @@
 
             document.querySelector(`a#list-exMaiorMenor-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/06_maiorEMenor.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/06_maiorEMenor.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -245,7 +256,7 @@
 
             document.querySelector(`a#list-exTipoTriangulo-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/07_tipoTriangulo.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/07_tipoTriangulo.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -260,7 +271,7 @@
 
             document.querySelector(`a#list-exFatorial-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/08_fatorial.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/08_fatorial.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -275,7 +286,7 @@
 
             document.querySelector(`a#list-exCalculadora-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/09_calculadoraBasica.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/09_calculadoraBasica.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -290,7 +301,7 @@
 
             document.querySelector(`a#list-exListaNomes-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/10_listaNOmes.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/10_listaNOmes.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -305,7 +316,7 @@
 
             document.querySelector(`a#list-exMultArr-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/11_multiplicacaoArrays.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/11_multiplicacaoArrays.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -320,7 +331,7 @@
 
             document.querySelector(`a#list-exSomaImpar-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/12_somaImpar.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/12_somaImpar.js`)
                 .then((res) => { 
                     return res.text()
                 })
@@ -335,7 +346,7 @@
 
             document.querySelector(`a#list-exParImpar-list`).addEventListener('click', async () => {
                 divCode.classList.remove('d-none');
-                const viagem = await fetch(`${window.location.protocol}//${window.location.host}/public/scripts/13_parOuImpar.js`)
+                const viagem = await fetch(`${fullRepoUrlToScripts}/13_parOuImpar.js`)
                 .then((res) => { 
                     return res.text()
                 })
