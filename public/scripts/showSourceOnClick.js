@@ -5,16 +5,26 @@ let divCode = document.querySelector('div#divCode')
 let codeContainer = document.querySelector('div#codeContainer');
 let codeTag = document.querySelector('code#codeGoesHere')
 let fullRepoUrlToScripts = `${window.location.protocol}//${window.location.host}/PLUS_QuestoesLogicaComJS/public/scripts`;
+let scriptLoader = document.querySelector('script#scriptTarefa');
 
 // Show Intro.
 document.querySelector(`a#list-introducao-list`).addEventListener('click', async () => {
     if (!divCode.classList.contains('d-none')){
         divCode.classList.add('d-none');
-    }                
+    }
+    if (scriptLoader.hasAttribute('src')){
+        scriptLoader.removeAttribute('src');
+    }
 });
 
 // Show Source-codes.
 document.querySelector(`a#list-exViagem-list`).addEventListener('click', async () => {
+    if (scriptLoader.hasAttribute('src')){
+        scriptLoader.removeAttribute('src');
+    }
+    scriptLoader.setAttribute('src', './public/scripts/01_viagem.js');
+    document.querySelector('button#resetViagem').dispatchEvent(new Event('click'));
+
     divCode.classList.remove('d-none');
     const viagem = await fetch(`${fullRepoUrlToScripts}/01_viagem.js`)
     .then((res) => { 
