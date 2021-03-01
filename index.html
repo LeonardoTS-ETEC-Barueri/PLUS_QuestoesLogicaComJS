@@ -19,9 +19,9 @@
 
     </head>
     <body>
-        <div class="container-fluid d-flex flex-column vh-100 font-monospace">
+        <div class="container-fluid d-flex flex-column vh-100">
             <div class="row overflow-auto flex-fill"> <!-- Row Lv.1 -->
-                <div class="col-sm-12 col-md-4 col-lg-2 overflow-auto h-100"> <!-- Col: Side-menu Begin -->
+                <div class="col-sm-12 col-md-4 col-lg-2" style="min-height: 100%;"> <!-- Col: Side-menu Begin -->
 
                     <div class="row">   <!-- Row Lv.2a -->
                         <div class="col-12 p-0 text-center">    <!-- Col Lv.2aa -->
@@ -71,59 +71,500 @@
 
                 </div>  <!-- Col: Side-Menu End -->
 
-                <main class="col-sm-12 col-md-8 col-lg-10 flex-fill h-100 bg-success">    <!-- Col: Main-Content Begin -->
-                    <div class="row d-flex flex-column h-100 bg-info">  <!-- Row Lv.2b -->
+                <main class="col-sm-12 col-md-8 col-lg-10 bg-success">    <!-- Col: Main-Content Begin -->
+                    <div class="row d-flex flex-column h-100 bg-info" style="min-height: 100%;">  <!-- Row Lv.2b -->
 
                         <div class="col-12 flex-fill p-2 bg-danger">   <!-- Col Lv.2ba -->
 
                             <!-- Todo contéudo interativo vai aqui... -->
                             <div id="tabContent" class="tab-content h-100" id="nav-tabContent">   <!-- Bootstrap's JavaScript List-Group Content -->
+
+                                <!-- Introdução -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost show active" id="list-introducao" role="tabpanel" aria-labelledby="list-introducao-list">
-                                    <p>Olá! Seja bem-vindo ao repositório de soluções para os desafios de lógica de programação da ETEC de Barueri.</p>
+                                    <p>Olá! Seja bem-vindo ao meu repositório de soluções para os desafios de lógica de programação da ETEC de Barueri.</p>
                                     <p>Meu nome é Leonardo T.S. e estou no 3º módulo do curso.</p>
                                     <p>Essa página ainda está em desenvolvimento, preciso adicionar interatividade às seções, para que você leitor possa visualizar o código em ação!</p>
-                                    <p>No momento, apenas o código fonte em uma versão não-interativa está disponível, ele apresenta a solução para o desafio, porém <strong>ainda</strong> não está integrado as funcionalidades dessa página :(</p>
+                                    <p>No momento, apenas o código fonte em uma versão não-interativa está disponível, ele apresenta a solução básica para o desafio, porém <strong>ainda</strong> não está integrado com as telas dessa página :(</p>
                                 </div>
 
+                                <!-- Viagem -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-viagem" role="tabpanel" aria-labelledby="list-exViagem-list">
-                                    Tela e lógica de interação com a Função Viagem (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Início Viagem -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Distância e Consumo de Combustível da Viagem</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpTempo" class="form-label fw-bold">Tempo da Viagem</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpTempo" placeholder="Exemplo: 00:00:00">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="inpVelMedia" class="form-label fw-bold">Velocidade Média</label>
+                                                <div class="row d-flex">
+                                                    <div class="col-sm-12 col-md-8 col-lg-10">
+                                                        <input type="text" class="form-control form-control-sm" id="inpVelMedia" placeholder="Exemplo: 0">
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-2 text-end text-md-start text-lg-start">
+                                                        <span> Km/h</span>
+                                                    </div>
+                                                </div>
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, você verá informações como a distância percorrida e a quantidade de combustível consumida.</p>
+                                            </div>
+                                            
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoViagem">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcViagem" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetViagem" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Viagem -->
                                 </div>
 
+                                <!-- Distributiva -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-distributiva" role="tabpanel" aria-labelledby="list-exDistributiva-list">
-                                    Tela e lógica de interação com a Função Distributiva (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Início Distributiva -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Soma e Multiplicação Distributiva</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsDistributiva" class="form-label fw-bold">Digite 4 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsDistributiva" placeholder="Exemplo: 1, 2, 3, 4">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, os número serão somados e multiplicados utilizando a propriedade distributiva.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoDistributiva">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcDistributiva" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetDistributiva" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Distributiva -->
                                 </div>
+
+                                <!-- Soma Produto -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-somaProduto" role="tabpanel" aria-labelledby="list-exSomaProduto-list">
-                                    Tela e lógica de interação com a Função Soma Produto (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Soma Produto -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Soma e Produto (Multiplicação)</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsSomaProduto" class="form-label fw-bold">Digite 4 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsSomaProduto" placeholder="Exemplo: 1, 2, 3, 4">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, o 1º e o 3º número serão somados, enquanto o 2º e o 4º serão multiplicados.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoSomaProduto">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcSomaProduto" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetSomaProduto" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Soma Produto -->
                                 </div>
+
+                                <!-- Num Ordenado -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-numOrdenado" role="tabpanel" aria-labelledby="list-exNumOrdenado-list">
-                                    Tela e lógica de interação com a Função Num Ordenado (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Num Ordenado -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Organizador de números</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumOrdenado" class="form-label fw-bold">Digite 3 números</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumOrdenado" placeholder="Exemplo: 5.2, 21, 0">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao organizar, os números serão exibidos na tela em ordem crescente e decrescente.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoNumOrdenado">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcNumOrdenado" type="submit" class="btn btn-primary fw-bold">Organizar</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetNumOrdenado" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Num Ordenado -->
                                 </div>
+
+                                <!-- Divisiveis -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-divisiveis" role="tabpanel" aria-labelledby="list-exDivisiveis-list">
-                                    Tela e lógica de interação com a Função Divisiveis (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Divisiveis -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">São divisíveis por 2 ou por 3?</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsDivisiveis" class="form-label fw-bold">Digite 4 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsDivisiveis" placeholder="Exemplo: 1, 2, 3, 4">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, os números divisíveis por 2 e por 3 serão exibidos.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoDivisiveis">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcDivisiveis" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetDivisiveis" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Divisiveis -->
                                 </div>
+
+                                <!-- Maior Menor -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-maiorMenor" role="tabpanel" aria-labelledby="list-exMaiorMenor-list">
-                                    Tela e lógica de interação com a Função Maior Menor (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Maior Menor -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Qual o maior e o menor número?</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsMaiorMenor" class="form-label fw-bold">Digite 5 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsMaiorMenor" placeholder="Exemplo: 1, 2, 3, 4, 5">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, será exibido o maior e o menor número digitado.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultados</p>
+                                                <div id="resultadoMaiorMenor">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcMaiorMenor" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetMaiorMenor" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Maior Menor -->
                                 </div>
+
+                                <!-- Tipo Triangulo -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-tipoTriangulo" role="tabpanel" aria-labelledby="list-exTipoTriangulo-list">
-                                    Tela e lógica de interação com a Função Tipo Triangulo (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Tipo Triângulo -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Qual o tipo de triângulo?</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsTriangulo" class="form-label fw-bold">Digite 3 valores para os lados do triângulo</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsTriangulo" placeholder="Exemplo: 1, 2.5, 3">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao analisar, verificará se o triângulo é do tipo Escaleno, Isósceles, Equilátero.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoTriangulo">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcTriangulo" type="submit" class="btn btn-primary fw-bold">Analisar</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetTriangulo" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Tipo Triangulo -->
                                 </div>
+
+                                <!-- Fatorial -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-fatorial" role="tabpanel" aria-labelledby="list-exFatorial-list">
-                                    Tela e lógica de interação com a Função Fatorial (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Fatorial -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Calculo Fatorial</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsFatorial" class="form-label fw-bold">Digite 1 número inteiro</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsFatorial" placeholder="Exemplo: 5">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, o resultado do fatorial do número é exibido.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoFatorial">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcFatorial" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetFatorial" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Fatorial -->
                                 </div>
+
+                                <!-- Calculadora -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-calculadora" role="tabpanel" aria-labelledby="list-exCalculadora-list">
-                                    Tela e lógica de interação com a Função Calculadora (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Calculadora -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Calculadora Simples</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumCalc1" class="form-label fw-bold">1º Número: </label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumCalc1" placeholder="Exemplo: 1.5">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="inpNumCalc2" class="form-label fw-bold">2º Número: </label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumCalc2" placeholder="Exemplo: 2">
+                                            </div>
+                                            <div class="mb-3">
+                                                <select id="calcOperacao" class="form-select" size='3'>
+                                                    <option selected>Selecione uma operacao</option>
+                                                    <option value="soma">Somar</option>
+                                                    <option value="subtracao">Subtrair</option>
+                                                    <option value="multiplicacao">Multiplicar</option>
+                                                    <option value="divisao">Dividir</option>
+                                                  </select>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoCalculadora">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcCalculadora" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetCalculadora" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Calculadora -->
                                 </div>
+
+                                <!-- Lista Nomes -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-listaNomes" role="tabpanel" aria-labelledby="list-exListaNomes-list">
-                                    Tela e lógica de interação com a Função ListaNomes (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Lista Nomes -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Lista de Nomes</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNome" class="form-label fw-bold">Digite um nome</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNome" placeholder="Exemplo: Maria">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao adicionar o décimo nome, eles serão exibidos na tela.</p>
+
+                                                <div class="row d-flex justify-content-center">
+                                                    <div class="col-auto mb-1">
+                                                        <button id="btnAddNome" type="submit" class="btn btn-primary fw-bold">Adicionar nome</button>
+                                                    </div>
+                                                    <div class="col-auto mb-1">
+                                                        <button id="resetListaNome" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Nomes</p>
+                                                <div id="resultadoFatorial">
+                                                    <p class="text-center">Quantidade de nomes [<span id="qtdNomes">0</span>]</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Lista Nomes -->
                                 </div>
+
+                                <!-- Multiplicação de Matrizes -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-multArr" role="tabpanel" aria-labelledby="list-exMultArr-list">
-                                    Tela e lógica de interação com a Função Multiplicação de Matrizes (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Multiplicacao de Matrizes -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Multiplicação de Matrizes</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsMultMatriz" class="form-label fw-bold">Digite 10 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsMultMatriz" placeholder="Exemplo: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, serão exibidos na tela os valores originais e o resultado da multiplicação de cada um deles por 3.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoMultMatriz">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcMultMatriz" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetMultMatriz" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Multiplicação de Matrizes -->
                                 </div>
+
+                                <!-- Soma Impar -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-somaImpar" role="tabpanel" aria-labelledby="list-exSomaImpar-list">
-                                    Tela e lógica de interação com a Função Soma Impar (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Soma Impar -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Soma Ímpares</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsSomaImpar" class="form-label fw-bold">Digite 10 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsSomaImpar" placeholder="Exemplo: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, os valores ímpares serão somados e o resultado será exibido.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoSomaImpar">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcSomaImpar" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetSomaImpar" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Soma Impar -->
                                 </div>
+
+                                <!-- Par Impar -->
                                 <div class="tab-pane fade p-2 h-100 bg-ghost" id="list-parImpar" role="tabpanel" aria-labelledby="list-exParImpar-list">
-                                    Tela e lógica de interação com a Função Par Impar (Todo...)
+
+                                    <div class="row d-flex justify-content-center align-content-center h-100 m-0 text-break">   <!-- Par Impar -->
+                                        
+                                        <div class="col-sm-12 col-md-6 col-lg-6 p-2 border border-dark bg-white rounded-2">
+                                            <h1 class="text-center lead fw-bold my-1">Processando Números Pares e Ímpares</h1>
+                                            <hr>
+                                            <div class="mb-3">
+                                                <label for="inpNumsProcParImpar" class="form-label fw-bold">Digite 10 números inteiros</label>
+                                                <input type="text" class="form-control form-control-sm" id="inpNumsProcParImpar" placeholder="Exemplo: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10">
+                                                <p class="small mb-3 ps-1 text-secondary">Ao calcular, os números pares serão multiplicados por 5 e os ímpares serão somados à 5.</p>
+                                            </div>
+                                            <hr class="mb-0">
+                                            <div class="mb-3">
+                                                <p class="fw-bold text-center">Resultado</p>
+                                                <div id="resultadoProcParImpar">
+                                                    <p class="text-center">...</p>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-auto mb-1">
+                                                <button id="calcProcParImpar" type="submit" class="btn btn-primary fw-bold">Calcular</button>
+                                                </div>
+                                                <div class="col-auto mb-1">
+                                                <button id="resetProcParImpar" type="submit" class="btn btn-primary fw-bold">Reiniciar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Função Par Impar -->
                                 </div>
                             </div>
                             <!-- Funcionalidades -->
@@ -132,7 +573,7 @@
                         <div id="divCode" class="col-12 d-none overflow-auto p-0 m-0 bg-light">    <!-- Col Lv.2bb -->
 
                             <div id="codeContainer" class="p-0 m-0 bg-light" style="opacity: 0;">   <!-- My Custom JavaScript -->
-                                <pre class="p-3 m-0" style="height: 25vh;"><code id="codeGoesHere" class="language-javascript"></code></pre>
+                                <pre class="p-3 m-0" style="height: 30vh;"><code id="codeGoesHere" class="language-javascript"></code></pre>
                             </div>
                             <!-- Código-Fonte -->
 
@@ -148,231 +589,7 @@
             </footer>
         </div>
 
-        <script>
-
-            // Involved Elements.
-            let divCode = document.querySelector('div#divCode')
-            let codeContainer = document.querySelector('div#codeContainer');
-            let codeTag = document.querySelector('code#codeGoesHere')
-            let fullRepoUrlToScripts = `${window.location.protocol}//${window.location.host}/PLUS_QuestoesLogicaComJS/public/scripts`;
-
-            // Show Intro.
-            document.querySelector(`a#list-introducao-list`).addEventListener('click', async () => {
-                if (!divCode.classList.contains('d-none')){
-                    divCode.classList.add('d-none');
-                }                
-            });
-
-            // Show Source-codes.
-            document.querySelector(`a#list-exViagem-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/01_viagem.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.textContent = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exDistributiva-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/02_distributiva.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exSomaProduto-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/03_somaproduto.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exNumOrdenado-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/04_numerosOrdenados.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exDivisiveis-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/05_saoDivisiveis.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exMaiorMenor-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/06_maiorEMenor.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exTipoTriangulo-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/07_tipoTriangulo.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exFatorial-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/08_fatorial.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exCalculadora-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/09_calculadoraBasica.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exListaNomes-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/10_listaNOmes.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exMultArr-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/11_multiplicacaoArrays.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exSomaImpar-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/12_somaImpar.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            document.querySelector(`a#list-exParImpar-list`).addEventListener('click', async () => {
-                divCode.classList.remove('d-none');
-                const viagem = await fetch(`${fullRepoUrlToScripts}/13_parOuImpar.js`)
-                .then((res) => { 
-                    return res.text()
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
-
-                codeTag.innerHTML = viagem;
-                Prism.highlightAll();
-                unfade(codeContainer);
-            });
-
-            // Element Transition Effect.
-            function unfade(element) {
-                var op = 0.1;
-                var timer = setInterval(function () {
-                    if (op >= 1){
-                        clearInterval(timer);
-                    }
-                    element.style.opacity = op;
-                    element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-                    op += op * 0.1;
-                }, 10);
-            }
-        </script>
-
+        <script src="./public/scripts/showSourceOnClick.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <script src="./public/scripts/prism.js" data-manual></script>
     </body>
