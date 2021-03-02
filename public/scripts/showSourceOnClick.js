@@ -19,12 +19,15 @@ document.querySelector(`a#list-introducao-list`).addEventListener('click', async
 
 // Show Source-codes.
 document.querySelector(`a#list-exViagem-list`).addEventListener('click', async () => {
+    // Reset interactions on this interface.
     if (scriptLoader.hasAttribute('src')){
         scriptLoader.removeAttribute('src');
     }
     scriptLoader.setAttribute('src', './public/scripts/01_viagem.js');
     document.querySelector('button#resetViagem').dispatchEvent(new Event('click'));
+    //
 
+    // Show Source-code.
     divCode.classList.remove('d-none');
     const viagem = await fetch(`${fullRepoUrlToScripts}/01_viagem.js`)
     .then((res) => { 
@@ -37,9 +40,16 @@ document.querySelector(`a#list-exViagem-list`).addEventListener('click', async (
     codeTag.textContent = viagem;
     Prism.highlightAll();
     unfade(codeContainer);
+    //
 });
 
 document.querySelector(`a#list-exDistributiva-list`).addEventListener('click', async () => {
+    if (scriptLoader.hasAttribute('src')){
+        scriptLoader.removeAttribute('src');
+    }
+    scriptLoader.setAttribute('src', './public/scripts/02_distributiva.js');
+    document.querySelector('button#resetDistributiva').dispatchEvent(new Event('click'));
+    
     divCode.classList.remove('d-none');
     const viagem = await fetch(`${fullRepoUrlToScripts}/02_distributiva.js`)
     .then((res) => { 

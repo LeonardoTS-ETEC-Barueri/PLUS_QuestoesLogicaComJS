@@ -15,7 +15,6 @@ btnCalcular.addEventListener('click', () => {
         erros.push('O consumo do automóvel em litros por kilometro deve ser uma estimativa em números inteiros.');
     }
     
-    console.log(inpTempo.value);
     if(!inpTempo.value.match(/^(\d+):([0-5][0-9]|[0-9]):([0-5][0-9]|[0-9])$/) || inpTempo.value === ''){
         erros.push('O tempo da viagem não parece estar correto, digite no formato "hh:mm:ss", sem áspas.')
     }
@@ -27,7 +26,7 @@ btnCalcular.addEventListener('click', () => {
     if (erros.length > 0){
         resultado.innerHTML = '<p class="text-center text-danger fw-bold">&#x26A0; Atenção &#x26A0;</p>'
         erros.forEach((erro) => {
-            resultado.innerHTML += `<p>• ${erro}<p>`
+            resultado.innerHTML += `<p>• ${erro}</p>`
         });
         return;
     }
